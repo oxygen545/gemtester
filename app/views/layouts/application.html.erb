@@ -11,6 +11,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <%= yield %>
+    <div id="body-container" class="container-fluid" >
+      <div class="row  dblock bg-secondary text-white">
+        <div class="col">
+          <div class="row">
+            <div class="col" align="center">
+              <%= render 'shared/topmenu' %>
+            </div>
+          </div>
+          <div class="row justify-content-between" >
+            <div class="col-2 bg-secondary" align="center"><%= render 'shared/leftmenu' %></div>
+            <div class="col-8 bg-primary text-white" align="center" ><%= yield %></div>
+            <div class="col-2 bg-secondary" align="center"><%= render 'shared/rightmenu' %></div>
+          </div>
+          <div class="row">
+            <div class="col align-self-start" align="center">
+              <%= render 'shared/bottommenu' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
