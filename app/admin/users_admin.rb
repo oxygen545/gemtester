@@ -1,31 +1,26 @@
-Trestle.resource(:articles) do
+Trestle.resource(:users) do
   menu do
-    item :articles, icon: "fa fa-star"
+    item :users, icon: "fa fa-star"
   end
 
   # Customize the table columns shown on the index view.
   #
-   table do
-     column :link
-     column :title
-     column :heading
-     column :body
-     actions
-   end
+  # table do
+  #   column :name
+  #   column :created_at, align: :center
+  #   actions
+  # end
 
   # Customize the form fields shown on the new/edit views.
   #
-   form do |article|
-     text_field :link
-     text_field :title
-     text_field :heading
-     text_area :body
-  
-     row do
-       col(xs: 6) { datetime_field :updated_at }
-       col(xs: 6) { datetime_field :created_at }
-     end
-   end
+  # form do |user|
+  #   text_field :name
+  #
+  #   row do
+  #     col(xs: 6) { datetime_field :updated_at }
+  #     col(xs: 6) { datetime_field :created_at }
+  #   end
+  # end
 
   # By default, all parameters passed to the update and create actions will be
   # permitted. If you do not have full trust in your users, you should explicitly
@@ -35,6 +30,6 @@ Trestle.resource(:articles) do
   #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
   #
   # params do |params|
-  #   params.require(:article).permit(:name, ...)
+  #   params.require(:user).permit(:name, ...)
   # end
 end
