@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'trestle'
+gem "actiontext", github: "rails/actiontext", require: "action_text"
+gem "image_processing", "~> 1.2" # for Active Storage variants
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
