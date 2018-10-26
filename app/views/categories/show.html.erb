@@ -1,0 +1,16 @@
+<div class="row">
+	<%= image_tag(@category.image, :align =>"center", :width => "100%") %>
+	<div class="col">
+	<ul>
+		<%= Article.where(category: @category.id).find_each do |a| %>
+			<li class="nav-link"><%= link_to a.title, a,  :class => "text-white"%></li>
+		<% end %>
+	</ul>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<%= link_to 'Edit', edit_category_path(@category), :class =>"text-white" %> |
+		<%= link_to 'Back', categories_path, :class =>"text-white" %>
+	</div>
+</div>

@@ -1,16 +1,17 @@
 <div class="row">
   <div class="col">
     <h1>Welcome to my site</h1>
-    <% @articles.each do |article| %>
-        <%= link_to article.link, article %>
-        <%= article.title %>
-        <%= article.heading %>
-        <%= raw(article.body.slice(0..250)) %>
-        <%= link_to 'Show', article %>
-        <%= link_to 'Edit', edit_article_path(article) %>
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <h2 class="text-muted">Stuff</h2>
+    <table>
+    <% @articles.find_each do |article| %>
+        <tr><td><h4><%= link_to article.title, article, :class =>"text-white" %></h4></td></tr>
+        <tr><td><h4 class="text-muted"><smaller><%= article.heading %></smaller></h4></td></tr>
+        <tr><td colspan="2"><%= raw(article.body.slice(0..250)) %></td></tr>
+            <%# link_to 'edit', article %>
+            <%# link_to 'Edit', edit_article_path(article) %>
+            <%# link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-    <br>
+    </table>
     <%= link_to 'New Article', new_article_path %>
   </div>
 </div>
